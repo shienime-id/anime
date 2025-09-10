@@ -1407,6 +1407,7 @@ app.post('/api/process', upload.single('file'), async (req, res) => {
         // Generate unique filename
         const originalName = path.parse(req.file.originalname).name;
         const extension = path.parse(req.file.originalname).ext;
+        const timestamp = Date.now();
         const outputFilename = `${originalName}_${processType}_by_ciel${extension}`;
 
         // Store in memory with metadata
